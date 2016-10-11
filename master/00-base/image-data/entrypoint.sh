@@ -15,7 +15,7 @@ if [ "$#" -eq 0 ]; then
             mv $s $s"_initialized"
         done
         #shutdown admin only server
-        $JBOSS_HOME/bin/jboss-cli.sh --connect --command=shutdown
+        $JBOSS_HOME/bin/jboss-cli.sh --connect --command=/host=master:shutdown
     fi
     # start real server
     $JBOSS_HOME/bin/domain.sh -b 0.0.0.0
