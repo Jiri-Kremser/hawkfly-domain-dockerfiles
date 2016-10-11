@@ -1,5 +1,0 @@
-batch
-
-/server-group=foobar:add(profile=default, socket-binding-group=standard-sockets)
-
-run-batch

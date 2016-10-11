@@ -12,7 +12,7 @@ if [ "$#" -eq 0 ]; then
         for s in /tmp/init/*.cli; do
             #execute cli script
             $JBOSS_HOME/bin/jboss-cli.sh --connect --file=$s
-            mv $s "$s_initialized"
+            mv $s $s"_initialized"
         done
         #shutdown admin only server
         $JBOSS_HOME/bin/jboss-cli.sh --connect --command=shutdown

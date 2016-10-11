@@ -1,0 +1,7 @@
+batch
+
+/server-group=my-group:add(profile=default, socket-binding-group=standard-sockets)
+/host=master/server-config=s:add(auto-start=true, group=my-group)
+/host=master/server-config=s:start
+
+run-batch
