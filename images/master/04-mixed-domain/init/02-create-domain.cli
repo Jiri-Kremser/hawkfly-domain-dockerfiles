@@ -1,0 +1,14 @@
+batch
+
+#create server groups
+/server-group=normal-group:add(profile=default, socket-binding-group=standard-sockets, socket-binding-port-offset=1000)
+/server-group=normal-group/jvm=default:add(heap-size=512m, max-heap-size=512m, stack-size=512k)
+
+# create servers
+/host=master/server-config=s3:add(auto-start=true, group=normal-group)
+#/host=master/server-config=s3:start()
+
+#/host=master/server-config=s4:add(auto-start=true, group=normal-group, socket-binding-port-offset=100)
+#/host=master/server-config=s4:start()
+
+run-batch

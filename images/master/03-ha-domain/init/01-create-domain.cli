@@ -1,0 +1,14 @@
+batch
+
+#create server groups
+/server-group=ha-group:add(profile=ha, socket-binding-group=ha-sockets)
+/server-group=ha-group/jvm=default:add(heap-size=1000m, max-heap-size=1500m, stack-size=256k)
+
+# create servers
+/host=master/server-config=ha-s1:add(auto-start=true, group=ha-group)
+#/host=master/server-config=ha-s1:start()
+
+/host=master/server-config=ha-s2:add(auto-start=true, group=ha-group, socket-binding-port-offset=100)
+#/host=master/server-config=ha-s2:start()
+
+run-batch

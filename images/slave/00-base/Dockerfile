@@ -1,0 +1,21 @@
+FROM pilhuhn/hawkfly-domain:0.22.0
+
+MAINTAINER Jirka Kremser <jkremser@redhat.com>
+
+ADD image-data/entrypoint.sh $JBOSS_HOME/bin/entrypoint.sh
+ADD image-data/wait_for_jboss_cli.js $JBOSS_HOME/bin/wait_for_jboss_cli.js
+ADD image-data/host-slave.xml $JBOSS_HOME/domain/configuration
+
+RUN mkdir /tmp/init
+USER root
+RUN chown jboss:jboss -R $JBOSS_HOME/bin
+USER jboss
+ONBUILD ADD init /tmp/init
+
+ENV DOMAIN_CONTROLLER_HOST=localhost
+ENV DOMAIN_CONTROLLER_PORT=9990
+ENV HOST_CONTROLLER_NAME=host1
+
+EXPOSE 8080 9090
+
+CMD ["/opt/jboss/wildfly/bin/entrypoint.sh"]

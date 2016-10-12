@@ -1,0 +1,15 @@
+FROM pilhuhn/hawkfly-domain:0.22.0
+
+MAINTAINER Jirka Kremser <jkremser@redhat.com>
+
+ADD image-data/entrypoint.sh $JBOSS_HOME/bin/entrypoint.sh
+ADD image-data/wait_for_jboss_cli.js $JBOSS_HOME/bin/wait_for_jboss_cli.js
+RUN mkdir /tmp/init
+USER root
+RUN chown jboss:jboss -R $JBOSS_HOME/bin
+USER jboss
+ONBUILD ADD init /tmp/init
+
+EXPOSE 8080 9990
+
+CMD ["/opt/jboss/wildfly/bin/entrypoint.sh"]
