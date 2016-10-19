@@ -4,6 +4,8 @@ MAINTAINER Jirka Kremser <jkremser@redhat.com>
 
 ADD image-data/entrypoint.sh $JBOSS_HOME/bin/entrypoint.sh
 ADD image-data/wait_for_jboss_cli.js $JBOSS_HOME/bin/wait_for_jboss_cli.js
+ADD image-data/wait_for_hawkular.sh $JBOSS_HOME/bin/wait_for_hawkular.sh
+
 RUN mkdir /tmp/init
 USER root
 RUN chown jboss:jboss -R $JBOSS_HOME/bin

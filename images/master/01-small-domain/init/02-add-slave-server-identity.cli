@@ -1,0 +1,5 @@
+batch
+
+/host=master/core-service=management/security-realm=ManagementRealm/server-identity=secret:add(value="MTIzNDU2"
+
+run-batch

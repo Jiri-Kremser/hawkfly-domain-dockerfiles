@@ -8,13 +8,15 @@ ADD image-data/host-slave.xml $JBOSS_HOME/domain/configuration
 
 RUN mkdir /tmp/init
 USER root
-RUN chown jboss:jboss -R $JBOSS_HOME/bin
+RUN chown jboss:jboss -R $JBOSS_HOME/bin #&& yum -y install telnet nc
 USER jboss
 ONBUILD ADD init /tmp/init
 
 ENV DOMAIN_CONTROLLER_HOST=localhost
 ENV DOMAIN_CONTROLLER_PORT=9990
-ENV HOST_CONTROLLER_NAME=host1
+
+# by default the hostname is used as a host controller name, this can be overridden by this env property
+#ENV HOST_CONTROLLER_NAME=host1
 
 EXPOSE 8080 9090
 

@@ -1,15 +1,26 @@
 version: '2'
 services:
 
-  # The wildfly running in the domain mode container
-  hawkfly-domain-small:
+  # The wildfly running in the domain mode container (master)
+  hawkfly-domain-small-master:
     build: ../../../images/master/01-small-domain
     image: "jkremser/hawkfly-domain-small:latest"
     ports:
       - "8081:8080"
       - "9991:9990"
-      links:
-        - hawkular
+    links:
+      - hawkular
+
+  # The wildfly running in the domain mode container (slave)
+  hawkfly-domain-small-slave:
+    build: ../../../images/slave/00-base
+    image: "jkremser/hawkfly-domain-slave-base"
+    links:
+      - hawkfly-domain-small-master
+    environment:
+      - DOMAIN_CONTROLLER_HOST=hawkfly-domain-small-master
+      - DOMAIN_CONTROLLER_PORT=9990
+      - SERVERS=my-group=2
 
   # The hawkular-services container
   hawkular:

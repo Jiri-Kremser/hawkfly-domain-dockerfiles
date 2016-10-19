@@ -17,8 +17,13 @@ if [ "$#" -eq 0 ]; then
         #shutdown admin only server
         $JBOSS_HOME/bin/jboss-cli.sh --connect --command=/host=master:shutdown
     fi
+    $JBOSS_HOME/bin/add-user.sh --silent --user slave --password 123456
+
+    # wait for hawkular server
+    $JBOSS_HOME/bin/wait_for_hawkular.sh
+
     # start real server
-    $JBOSS_HOME/bin/domain.sh -b 0.0.0.0
+    $JBOSS_HOME/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0
 else
     #docker run [COMMAND] is provided, execute it (e.g. bash)
     exec "$@"
