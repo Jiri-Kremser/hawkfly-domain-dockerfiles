@@ -20,7 +20,7 @@ if [ "$#" -eq 0 ]; then
     $JBOSS_HOME/bin/add-user.sh --silent --user slave --password 123456
 
     # wait for hawkular server
-    $JBOSS_HOME/bin/wait_for_hawkular.sh
+    sh $JBOSS_HOME/bin/wait_for_hawkular.sh
 
     # start real server
     $JBOSS_HOME/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0

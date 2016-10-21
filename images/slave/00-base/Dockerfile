@@ -11,6 +11,7 @@ USER root
 RUN chown jboss:jboss -R $JBOSS_HOME/bin #&& yum -y install telnet nc
 USER jboss
 ONBUILD ADD init /tmp/init
+WORKDIR $JBOSS_HOME/bin
 
 ENV DOMAIN_CONTROLLER_HOST=localhost
 ENV DOMAIN_CONTROLLER_PORT=9990

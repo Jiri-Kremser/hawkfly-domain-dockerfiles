@@ -11,6 +11,7 @@ USER root
 RUN chown jboss:jboss -R $JBOSS_HOME/bin
 USER jboss
 ONBUILD ADD init /tmp/init
+WORKDIR $JBOSS_HOME/bin
 
 EXPOSE 8080 9990
 
