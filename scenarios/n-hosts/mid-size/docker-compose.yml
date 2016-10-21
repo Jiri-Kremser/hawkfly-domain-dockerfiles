@@ -3,7 +3,7 @@ services:
 
   # The wildfly running in the domain mode container (master)
   hawkfly-domain-middle-master:
-    build: ../../../images/master/02-mid-size-domain
+    #build: ../../../images/master/02-mid-size-domain
     image: "jkremser/hawkfly-domain-middle:latest"
     ports:
       - "8081:8080"
@@ -13,7 +13,7 @@ services:
 
   # The wildfly running in the domain mode container (slave)
   hawkfly-domain-middle-slave:
-    build: ../../../images/slave/00-base
+    #build: ../../../images/slave/00-base
     image: "jkremser/hawkfly-domain-slave-base"
     links:
       - hawkfly-domain-middle-master

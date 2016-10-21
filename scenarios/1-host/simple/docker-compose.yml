@@ -3,7 +3,7 @@ services:
 
   # The wildfly running in the domain mode container
   hawkfly-domain-small:
-    build: ../../../images/master/01-small-domain
+    #build: ../../../images/master/01-small-domain
     image: "jkremser/hawkfly-domain-small:latest"
     ports:
       - "8081:8080"

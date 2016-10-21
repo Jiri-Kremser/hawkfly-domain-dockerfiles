@@ -3,7 +3,7 @@ services:
 
   # The wildfly running in the domain mode container
   hawkfly-domain-ha:
-    build: ../../../images/master/03-ha-domain
+    #build: ../../../images/master/03-ha-domain
     image: "jkremser/hawkfly-domain-ha:latest"
     ports:
       - "8081:8080"
