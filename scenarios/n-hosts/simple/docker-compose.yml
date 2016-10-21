@@ -24,7 +24,7 @@ services:
 
   # The hawkular-services container
   hawkular:
-    image: "pilhuhn/hawkular-services:latest"
+    image: "pilhuhn/hawkular-services:0.0.14.Final"
     ports:
       - "8080:8080"
       - "8443:8443"
