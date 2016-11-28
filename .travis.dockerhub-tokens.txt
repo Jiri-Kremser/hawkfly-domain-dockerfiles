@@ -1,0 +1,6 @@
+6220640f-3740-49ad-9635-f6f61ab7c61a hawkfly-domain-base
+8f254f69-ac9e-468d-911b-54d183766806 hawkfly-domain-slave-base
+756c4501-4f2f-4818-8b9b-79a16ce2153f hawkfly-domain-small
+8771110e-9923-499a-bdf7-ff0b8aa026c8 hawkfly-domain-middle
+b4d54205-9413-41a9-8043-eafa9ebece31 hawkfly-domain-ha
+b921abdf-0ea2-461e-832e-016b7168a928 hawkfly-domain-mixed
