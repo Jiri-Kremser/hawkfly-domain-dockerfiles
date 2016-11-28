@@ -1,4 +1,4 @@
-FROM pilhuhn/hawkfly-domain:latest
+FROM pilhuhn/hawkfly-domain:0.24.0
 
 MAINTAINER Jirka Kremser <jkremser@redhat.com>
 
