@@ -1,0 +1,9 @@
+language: generic
+
+sudo: false
+after_script:
+  - echo $TRAVIS_TAG
+  - if [[ "$TRAVIS_TAG" != "false" ]] ;
+    then
+      ./.travis.notify-dockerhub.sh $TRAVIS_TAG ;
+    fi
