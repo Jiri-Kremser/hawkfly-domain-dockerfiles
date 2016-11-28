@@ -13,6 +13,6 @@ USER jboss
 ONBUILD ADD init /tmp/init
 WORKDIR $JBOSS_HOME/bin
 
-EXPOSE 8080 9990
+EXPOSE 8080 9990 9991 9992
 
 CMD ["/opt/jboss/wildfly/bin/entrypoint.sh"]
