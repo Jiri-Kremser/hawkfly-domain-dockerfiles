@@ -4,7 +4,7 @@ services:
   # The wildfly running in the domain mode container (master)
   hawkfly-domain-small-master:
     #build: ../../../images/master/01-small-domain
-    image: "jkremser/hawkfly-domain-small:latest"
+    image: "jkremser/hawkfly-domain-small:0.24.2"
     ports:
       - "8081:8080"
       - "9991:9990"
@@ -14,7 +14,7 @@ services:
   # The wildfly running in the domain mode container (slave)
   hawkfly-domain-small-slave:
     #build: ../../../images/slave/00-base
-    image: "jkremser/hawkfly-domain-slave-base"
+    image: "jkremser/hawkfly-domain-slave-base:0.24.2"
     links:
       - hawkfly-domain-small-master
     environment:
@@ -24,7 +24,7 @@ services:
 
   # The hawkular-services container
   hawkular:
-    image: "pilhuhn/hawkular-services:0.0.14.Final"
+    image: "pilhuhn/hawkular-services:0.21.0.Final"
     ports:
       - "8080:8080"
       - "8443:8443"

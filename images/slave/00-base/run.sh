@@ -1,3 +1,4 @@
 #!/bin/sh
 set -x
-docker run jkremser/hawkfly-domain-slave-base
+source ../../env.sh
+docker run jkremser/hawkfly-domain-slave-base:$IMAGE_VERSION
