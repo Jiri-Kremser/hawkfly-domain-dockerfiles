@@ -1,3 +1,3 @@
 #!/bin/sh
 
-IMAGE_VERSION=latest
+IMAGE_VERSION=0.22.0

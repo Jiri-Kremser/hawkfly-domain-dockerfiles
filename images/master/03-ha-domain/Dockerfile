@@ -1,4 +1,4 @@
-FROM jkremser/hawkfly-domain-base:latest
+FROM jkremser/hawkfly-domain-base:0.22.0
 
 MAINTAINER Jirka Kremser <jkremser@redhat.com>
 
