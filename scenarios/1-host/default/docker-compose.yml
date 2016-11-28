@@ -6,6 +6,7 @@ services:
     image: "pilhuhn/hawkfly-domain:0.22.0"
     ports:
       - "8081:8080"
+      - "9991:9990"
     links:
       - hawkular
     command: bash -c "sleep 30 && /opt/jboss/wildfly/bin/domain.sh -b 0.0.0.0"
