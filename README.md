@@ -1,5 +1,11 @@
 # hawkfly-domain-dockerfiles
 
+Docker images and docker-compose files for some basic scenarios in which the hawkular is used for monitoring the WildFly servers managed as a domain. You may want to use the simple CLI tool called [hawkinit](https://github.com/Jiri-Kremser/hawkinit) to spawn the containers.
+
+[![Build Status](https://travis-ci.org/Jiri-Kremser/hawkinit.svg?branch=master)](https://travis-ci.org/Jiri-Kremser/hawkinit)
+
+## Usage
+
 1. choose a scenario
 
   `cd scenarios/1-host/mid-size`
