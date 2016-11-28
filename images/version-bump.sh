@@ -13,5 +13,5 @@ for dockerfile in `find . -name Dockerfile` ; do
   sed -i "s;^\(FROM [^/]*/[^/]*:\).*$;\1$VERSION;" $dockerfile
 done
 
-$git tag $VERSION
+#git tag $VERSION
 echo "Done. Don't forget to create a new tag and git push --tags"
