@@ -23,7 +23,7 @@ if [ "$#" -eq 0 ]; then
     sh $JBOSS_HOME/bin/wait_for_hawkular.sh
 
     # start real server
-    $JBOSS_HOME/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0
+    $JBOSS_HOME/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -Dactivemq.artemis.client.global.thread.pool.max.size=30
 else
     #docker run [COMMAND] is provided, execute it (e.g. bash)
     exec "$@"

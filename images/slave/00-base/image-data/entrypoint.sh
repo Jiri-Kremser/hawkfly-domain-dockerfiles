@@ -49,7 +49,7 @@ if [ "$#" -eq 0 ]; then
 
     # start the server
     echo "master="$HOST":"$PORT
-    $JBOSS_HOME/bin/domain.sh -b 0.0.0.0 --host-config=host-slave.xml -Djboss.domain.master.address=$HOST -Djboss.domain.master.port=$PORT -Djboss.host.name=$HOST_CONTROLLER_NAME
+    $JBOSS_HOME/bin/domain.sh -b 0.0.0.0 --host-config=host-slave.xml -Djboss.domain.master.address=$HOST -Djboss.domain.master.port=$PORT -Djboss.host.name=$HOST_CONTROLLER_NAME -Dactivemq.artemis.client.global.thread.pool.max.size=30
 else
     #docker run [COMMAND] is provided, execute it (e.g. bash)
     exec "$@"
