@@ -4,6 +4,7 @@ set -x
 if [ "$#" -ne 1 ]; then
     echo "Illegal number of parameters, this script takes the desired version."
     echo "example: ./version-bump.sh 0.24.2"
+    exit 1
 fi
 
 VERSION=$1
