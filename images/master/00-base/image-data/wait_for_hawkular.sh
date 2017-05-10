@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hawkular_server=${HAWKULAR_SERVER:=http://hawkular:8080}
-endpoint=$hawkular_server"/hawkular/inventory/status"
+endpoint=$hawkular_server"/hawkular/status"
 wait_seconds=${WAIT_SECONDS:=15}
 
 echo "waiting for the hawkular server to be up"
