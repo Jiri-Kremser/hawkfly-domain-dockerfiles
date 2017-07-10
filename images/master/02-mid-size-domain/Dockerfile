@@ -1,4 +1,4 @@
-FROM jkremser/hawkfly-domain-base:latest
+FROM hawkular/wildfly-hawkular-agent-domain:latest
 
 MAINTAINER Jirka Kremser <jkremser@redhat.com>
 

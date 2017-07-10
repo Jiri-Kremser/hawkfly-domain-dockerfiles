@@ -1,3 +1,3 @@
 #!/bin/sh
 
-IMAGE_VERSION=latest
+IMAGE_VERSION=1.0.0.CR4
