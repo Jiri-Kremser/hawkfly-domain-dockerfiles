@@ -3,7 +3,7 @@ services:
 
   # set up the wildfly in domain mode with embedded hawkular-agent
   hawkfly-domain-default:
-    image: "pilhuhn/hawkfly-domain:0.24.2"
+    image: "hawkular/wildfly-hawkular-agent-domain:1.0.0.CR4"
     ports:
       - "8081:8080"
       - "9991:9990"
@@ -13,7 +13,7 @@ services:
 
   # The hawkular-server
   hawkular:
-    image: "pilhuhn/hawkular-services:0.21.0.Final"
+    image: "hawkular/hawkular-services:0.38.0.Final"
     ports:
       - "8080:8080"
       - "8443:8443"

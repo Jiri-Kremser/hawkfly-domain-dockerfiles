@@ -4,7 +4,7 @@ services:
   # The wildfly running in the domain mode container
   hawkfly-domain-ha:
     #build: ../../../images/master/03-ha-domain
-    image: "jkremser/hawkfly-domain-ha:0.24.2"
+    image: "jkremser/hawkfly-domain-ha:1.0.0.CR4"
     ports:
       - "8081:8080"
       - "9991:9990"
@@ -13,7 +13,7 @@ services:
 
   # The hawkular-services container
   hawkular:
-    image: "jkremser/hawkular-services:latest"
+    image: "hawkular/hawkular-services:0.38.0.Final"
     ports:
       - "8080:8080"
       - "8443:8443"
